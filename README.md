@@ -2,7 +2,7 @@
 
 Simple numerical approach to solving a given second order differential equation.
 
-![Example](https://github.com/tomgasper/diff-eq-vis/blob/main/examples/sin(x).jpg?raw=true)
+![Example](https://github.com/tomgasper/diff-eq-vis/blob/main/examples/example_1.jpg?raw=true)
 
 # Notes
 
