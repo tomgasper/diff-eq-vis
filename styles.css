@@ -1,0 +1,42 @@
+.uicontainer {
+    width:100%;
+    display: flex;
+    
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+
+.buttoncontainer {
+    width:30%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    
+    z-index:1;
+    color: white;
+}
+
+.buttoncontainer_row_1 {
+    display:flex;
+    flex-direction: row;
+}
+
+.buttoncontainer_row_2 {
+    display:flex;
+   
+    flex-direction: row;
+    
+}
+
+.text_input {
+    z-index: 1;
+}
+
+input{
+    width:100%;
+}
+
+#test_id {
+    top:1%;
+    left:1%;
+}
