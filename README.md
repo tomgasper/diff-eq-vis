@@ -2,6 +2,8 @@
 
 Simple numerical approach to solving a given second order differential equation.
 
+![Example](https://github.com/tomgasper/diff-eq-vis/blob/main/examples/sin(x).jpg?raw=true)
+
 # Notes
 
 In the input window use symbol x as x(t) and symbol x_d as x'(t).
