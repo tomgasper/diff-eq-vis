@@ -26,6 +26,8 @@ export function initGraphLine(state, style, Two)
     let line_g = new Two.Path(state.line_g_a, false);
     line_g.fill = "none";
     line_g.stroke = "blue";
+    // offset the whole to fit the y_axis start position
+    line_g.position.x = style.win.y_axis_offset;
     state.line_g_ref = line_g;
     window.add(state.line_g_ref);
 }
@@ -133,14 +135,13 @@ export function setUIelements(state, style, v_field)
 export function clearAnim(state)
 {
     state._t_start = state._t;
-    if (state.line_g_ref.vertices.length > 0 ) state.line_g_ref.vertices = [];
+    if (state.line_g_ref.vertices.length > 0 ) { state.line_g_ref.vertices = []; }
 }
 
 export function play_animation( state, style, jmp )
 {
     let t = state._t - state._t_start;
 
-    console.log(t);
     const indx = Math.floor(jmp*t);
     if (state.phase_arr.length <= indx) { state.isShouldPlayAnim = false; return; }
 
@@ -157,12 +158,12 @@ function updateState(state, style,v_field)
 
 function updatePntsPosition(state,style, indx)
 {
+    // animate point on the screen
     state.pnt_ref.position.x = state.phase_arr[indx].x;
     state.pnt_ref.position.y = state.phase_arr[indx].y;
 
-    // graph line and point
-    state.line_g_a[indx].x = state.line_g_a[indx].x + style.win.y_axis_offset;
-    state.pnt_g_ref.position.x = state.line_g_a[indx].x;
+    // animate graph point, (with offset)
+    state.pnt_g_ref.position.x = state.line_g_a[indx].x+style.win.y_axis_offset;
     state.pnt_g_ref.position.y = state.line_g_a[indx].y;
     
     state.line_g_ref.vertices.push(state.line_g_a[indx]);
@@ -172,11 +173,17 @@ export function updateInitCond(state, style)
 {
     const document = style._document_ref;
     const screen = style.screen._ref;
+    const window = style.win._ref;
 
     state._x = parseInt(document.getElementById("x_0_input").value);
     state._x_d = parseInt(document.getElementById("x_d_0_input").value);
+
+    // reset phase point position
     state.pnt_ref.position.x = screen.width/2+state._x*100;
     state.pnt_ref.position.y = screen.height/2+(-1)*state._x_d*100;
+    // reset graph point position
+    state.pnt_g_ref.position.x = style.win.y_axis_offset;
+    state.pnt_g_ref.position.y = window.height/2;
 }
 
 // Calculate the solution
