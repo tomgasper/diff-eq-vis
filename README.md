@@ -11,6 +11,7 @@ In the input window use symbol x as x(t) and symbol x_d as x'(t).
 For example to show solution to: x(t)''+2x(t)'+3x(t)=sin(x(t))
 insert: -2*x_d-3*x-Math.sin(x) to the input window, then click set and finally play to start the animation.
 
+Also note that the code is a bit of mess as I tried to put this together quickly, just to have some working visualizer I could experiment with.
 ## Dependencies
 
 * Javascript
