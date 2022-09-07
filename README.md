@@ -1,6 +1,7 @@
 # Second Order Differential Equation Phase Plane Visualization
-
-Simple numerical approach to solving a given second order differential equation.
+  
+Simple numerical approach to solving a given second order differential equation.  
+View live in [Github Pages](https://tomgasper.github.io/diff-eq-vis/)  
 
 ![Example](https://github.com/tomgasper/diff-eq-vis/blob/main/examples/example_1.jpg?raw=true)
 
