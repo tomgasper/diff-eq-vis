@@ -56,8 +56,9 @@ export default class V_Field {
 
     const row_size = size/step;
     const column_size = row_size;
-    const v_field_arr_temp = new Array( row_size * column_size );
-    const v_field_arr_top_temp = new Array( row_size * column_size );
+    const time_dim = this.state.end_t/this.state.dt;
+    const v_field_arr_temp = new Array( row_size * column_size * time_dim + 1);
+    const v_field_arr_top_temp = new Array( row_size * column_size * time_dim + 1);
 
     let indx = 0;
 
