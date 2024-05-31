@@ -105,8 +105,7 @@ export default class V_Field {
         indx++;
         }
     }
-    }
-
+        
     this.state.v_field_arr = v_field_arr_temp;
     this.state.v_field_arr_top = v_field_arr_top_temp;
     }
