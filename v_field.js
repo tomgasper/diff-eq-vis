@@ -67,6 +67,8 @@ export default class V_Field {
     // just helpers to make the code more readable
     for (let x_d = -size/2; x_d < size/2; x_d+= step)
     {
+        for (let t = 0; t < this.state.end_t; t += dt)
+        {
         // x = x, y = x_d (state vector)
         // x =  x_d, y = x_dd (derivative of state vector)
         // const indx = row_size*(x_d+size/2) + (x+size/2);
@@ -101,6 +103,7 @@ export default class V_Field {
 
         v_field_arr_top_temp[indx] = vec_top;
         indx++;
+        }
     }
     }
 
