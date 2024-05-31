@@ -70,7 +70,7 @@ export default class V_Field {
         // x = x, y = x_d (state vector)
         // x =  x_d, y = x_dd (derivative of state vector)
         // const indx = row_size*(x_d+size/2) + (x+size/2);
-        const x_dd = this.state.eval_x_dd(x,x_d);
+        const x_dd = this.state.eval_x_dd(x,x_d,t);
 
         // normalize vectors
         const mag = Math.sqrt(Math.pow(x_d,2)+Math.pow(x_dd,2));
