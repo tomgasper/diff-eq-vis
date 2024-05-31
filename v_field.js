@@ -27,6 +27,8 @@ export default class V_Field {
     // just helpers to make the code more readable
     for (let x_d = -size/2; x_d < size/2; x_d+= step)
     {
+        for (let t = 0; t < this.state.end_t; t += this.state.dt)
+        {
         // const indx = row_size*(x_d+size/2) + (x+size/2);
         let vec = this.screen.makePath(0,0,0,0);
         vec.stroke = "#22FD9D";
@@ -39,6 +41,7 @@ export default class V_Field {
         vec_top.fill = "#22FD9D";
         v_field_arr_top_temp[indx] = vec_top;
         indx++;
+        }
     }
     }
     this.state.v_field_arr = v_field_arr_temp;
