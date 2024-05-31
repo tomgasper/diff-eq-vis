@@ -116,7 +116,7 @@ export function setUIelements(state, style, v_field)
     // handlers descriptions
     function butt_set_handler(state, style, v_field)
     {
-        state.eval_x_dd = function(x,x_d) { return eval( style._document_ref.getElementById("text_input").value ); }
+        state.eval_x_dd = function(x,x_d,t) { return eval( style._document_ref.getElementById("text_input").value ); }
         state.isShouldPlayAnim = false;
         clearAnim(state);
         updateState(state, style, v_field);
@@ -191,7 +191,7 @@ export function calcCirclesPaths(state, style)
     {
     let x =  state._x;
     let x_d = state._x_d;
-    let x_dd = state.eval_x_dd(x,x_d);
+    let x_dd = state.eval_x_dd(x,x_d,t);
 
     let end_t = state.end_t;
     let dt = state.dt;
@@ -208,7 +208,7 @@ export function calcCirclesPaths(state, style)
     // starting point x(0)= 3, x'(0) = 5
     x += x_d * dt;
     x_d += x_dd * dt;
-    x_dd = state.eval_x_dd(x,x_d);
+    x_dd = state.eval_x_dd(x,x_d,t);
 
     // graph pnt
     let t_s = t*20;
