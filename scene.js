@@ -191,7 +191,7 @@ export function calcCirclesPaths(state, style)
     {
     let x =  state._x;
     let x_d = state._x_d;
-    let x_dd = state.eval_x_dd(x,x_d,t);
+    let x_dd = state.eval_x_dd(x,x_d,0);
 
     let end_t = state.end_t;
     let dt = state.dt;
